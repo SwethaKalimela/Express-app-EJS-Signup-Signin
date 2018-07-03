@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="container">            <!--1. The Main Container-->`
+        <div id="left-container">   <!--1.1 Left container, subcontainer in main container-->
+            <div id="leftcontainer-top"> <!--1.1.1 Left container's top section occupying 50% of it-->
+                <div class="div1" id="currentinfo">
+                    <h2 id="fname"><%= name %></h2>
+                    <h2 id="lname"><%= lastname %></h2>
+                    <h5 id="designation"><%= designation %></h5>
+                    <h6 id="job-description"><%= description %>
+                    </h6>
+                </div>
+                <div class="div2">
+                </div>
+            </div>
+            <div id="leftcontainer-bottom"> <!--1.1.2 Left container's bottom section occupying another 50% of it-->
+                <div id="div21">
+                    <h5 id="head1">PERSONALITY HIGHLIGHTS</h5>
+                </div>
+                <ul id="personality">
+                        <% for(let i = 0; i <= 5; i++) { %>
+                            <li><%= personal.personalityhighlights[i] %></li>
+                        <% } %>
+                </ul>
+                <div id="div22">
+                    <h5 id="head2">CONTACT DETAILS</h5>
+                </div>
+                <div id="contact">
+                        <% for(let i = 0; i <= 3; i++) { %>
+                            <div id="cnd" ><%= contacts.contact[i] %></div><br>
+                        <% } %>
+                </div>    
+        </div>               
+        <div id="right-container">  <!--1.2 Right container-->
+            <div id="right1">
+                <h5 id="basic">BASIC<br>INFORMATION</h5><hr>
+                <p id="basic2"><%= basicinfo %></p>
+            </div>
+            <div id="right2">
+                    <h3 id="education">EDUCATION</h3><hr>
+                    <p id="education2"><%= educationdetails %></p>
+            </div>
+            <div id="right3">
+                <h3 id="experiance">PROFESSIONAL EXPERIANCE</h3><hr>
+                <% for(let i = 0; i <= 3; i++) { %>
+                    <p id="exp"><%= experiancedetails.experiance[i] %></p>
+                <% } %>                
+            </div>
+        </div>        
+    </div>                    
+</body>
+</html>
